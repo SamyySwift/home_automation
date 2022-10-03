@@ -6,7 +6,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Simple Recorder.js demo with record, stop and pause - addpipe.com</title>
+    <title>Loaf Home Automation WebApp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="static\style.css">
@@ -14,7 +14,7 @@
   </head>
   <body>
     <h2 >Loaf Home Automation WebApp</h2>
-    <p><small>Made by the Loaf Team <a href="#" target="_blank">Home Automatio Company Platform</a></small></p>
+    <p><small>Made by the Loaf Team <a href="#" target="_blank">Home Automation Company</a></small></p>
 
     <div id="controls">
   	 <button id="recordButton">Record</button>
@@ -51,7 +51,7 @@
   //add events to those 2 buttons
   recordButton.addEventListener("click", startRecording);
   stopButton.addEventListener("click", stopRecording);
-  // pauseButton.addEventListener("click", pauseRecording);
+  pauseButton.addEventListener("click", pauseRecording);
 
   function startRecording() {
     console.log("recordButton clicked");
@@ -147,7 +147,7 @@
     gumStream.getAudioTracks()[0].stop();
 
     //create the wav blob and pass it on to createDownloadLink
-    rec.exportWAV(createDownloadLink);
+    rec.exportWAV(activate);
   }
 
   function createDownloadLink(blob) {
