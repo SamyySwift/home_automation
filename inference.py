@@ -1,5 +1,5 @@
 import json
-import httpx
+import requests
 
 
 API_TOKEN = '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'
@@ -17,7 +17,7 @@ def query(filename, lang):
             data = f.read()
             
         try:
-            response = httpx.request("POST", API_URL, headers=headers, data=data)
+            response = requests.request("POST", API_URL, headers=headers, data=data)
             command = json.loads(response.content.decode("utf-8"))
             command = command['text']
             if command != '':
@@ -36,7 +36,7 @@ def query(filename, lang):
             data = f.read()
         
         try:
-            response = httpx.request("POST", API_URL, headers=headers, data=data)
+            response = requests.request("POST", API_URL, headers=headers, data=data)
             command = json.loads(response.content.decode("utf-8"))
             command = command['text']
             if command != '':
@@ -54,7 +54,7 @@ def query(filename, lang):
         with open(filename, "rb") as f:
             data = f.read()
         try:
-            response = httpx.request("POST", API_URL, headers=headers, data=data)
+            response = requests.request("POST", API_URL, headers=headers, data=data)
             command = json.loads(response.content.decode("utf-8"))
             command = command['text']
             if command != '':
