@@ -1,8 +1,5 @@
 from inference import *
 from script import *
-import librosa
-import soundfile as sf
-import numpy as np
 
 
 # def preprocess_audio(audio_array):
