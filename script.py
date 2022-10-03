@@ -3,7 +3,7 @@ import requests
 
 def activate_hausa(command):
     try:
-        if ('kan' in command and 'pallo' in command.split()) or ('kan' in command and 'palo' in command.split()) or ('kan' in command and 'ballo' in command.split()) or ('kan' in command and 'faloo' in command.split()) or ('kan' in command and 'falo' in command.split()) or ('kann' in command and 'falo' in command.split()):
+        if ('kan' in command and 'pallo' in command.split()) or ('kan' in command and 'palo' in command.split()) or ('kan' in command and 'paloo' in command.split())or ('kan' in command and 'ballo' in command.split()) or ('kan' in command and 'faloo' in command.split()) or ('kan' in command and 'falo' in command.split()) or ('kann' in command and 'falo' in command.split()):
             requests.get('https://blynk.cloud/external/api/update?token=G8ynpU1qu1pivhBZuJwaI542ijnLAOsv&v0=1')
             return "Ok, i'm turning on the parlor light!"
 
