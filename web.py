@@ -2,16 +2,6 @@ from inference import *
 from script import *
 
 
-# def preprocess_audio(audio_array):
-#     try:
-#         # _, array = audio_array
-#         y, sr = librosa.load(audio_array, sr=16000)
-#         sf.write('audio.wav', y, samplerate=16000, subtype='PCM_16')      
-#         return 'audio.wav'
-#     except TypeError as e:
-#         pass
-
-
 def interface(Audio_Inp, Language):
     # audio_path = preprocess_audio(Audio_Inp)
 
