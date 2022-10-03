@@ -1,12 +1,13 @@
-from fastapi import FastAPI, Request, File, UploadFile, BackgroundTasks, Response, Form
-import uvicorn
+from fastapi import FastAPI, Request, File, UploadFile
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from fastapi.responses import StreamingResponse
 import shutil
+from web import interface
 
 app = FastAPI()
+
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
 # Render html files
 templates = Jinja2Templates(directory="templates")
 
@@ -22,8 +23,14 @@ def state():
 async def user(audio_data: UploadFile = File(...)):
     with open('audio.wav', 'wb') as f:
         shutil.copyfileobj(audio_data.file, f)
-    return audio_data.filename
+    print("Done")
+    command = _activate('audio.wav', "Hausa")
+    print(command)
+    return command
 
+def _activate(audio_data, lang):
+    command = interface(audio_data, lang)
+    return command
 
 
 # if __name__ == '__main__':
