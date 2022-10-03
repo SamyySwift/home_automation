@@ -210,7 +210,7 @@
   function activate(blob){
     var fd=new FormData();
     fd.append("audio_data", blob, 'audio.wav');
-    fetch('https://loaf-home.herokuapp.com:8000/submitaudio', {
+    fetch('/submitaudio', {
       method: 'POST',
       body: fd
     })
